@@ -1,0 +1,17 @@
+version: "3"
+services:
+  kubectl:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+      args:
+        ALPINE_VER: 3.11.5
+        KUBECTL_VER: v1.18.0
+        KUBEDOG_VER: v0.3.2
+    container_name: kubectl
+    hostname: kubectl
+    image: icmdb/kubectl
+    volumes:
+      - ~/.kube:/root/.kube
+    command: sleep 1000
+    network_mode: host
