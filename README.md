@@ -14,13 +14,17 @@ docker run --rm -ti \
     icmdb/kubectl \
     sh
 
-# tail deploy logs
+# stern tail deploy logs
 stern --tail 1 --timestamps <deployname> -n <namespace>
+
+# kubedog follow deploy
+kubedog follow deployment <deployname> -n <namespace>
 ```
 
 ## TODO:
 
 * [x] [kubectl](https://kubernetes.io/docs/tasks/tools/install-kubectl/)
+* [ ] [kubectl-ctx](https://github.com/postfinance/kubectl-ctx)
 * [ ] [kubecm](https://github.com/sunny0826/kubecm)
 * [ ] [ktconnect](https://github.com/alibaba/kt-connect)
 * [x] [stern](https://github.com/wercker/stern)
