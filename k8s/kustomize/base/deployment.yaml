@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kubectl
+  name: kubectl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kubectl
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: kubectl
+    spec:
+      containers:
+      - image: icmdb/kubectl
+        name: kubectl
+        resources: {}
